@@ -47,7 +47,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: npm run lint
-  deploy:
+  deploy-github:
     <<: *defaults
     steps:
       - checkout
@@ -92,9 +92,18 @@ jobs:
               cd ..
               rm -rf gh-pages-branch
 
-              echo "Finished Deployment!"
+              echo "Finished GitHub pages Deployment!"
 
-
+  deploy-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - deploy:
+          name: Deploy to Production
+          command: |
+              echo "iooooooo"
 
 
 workflows:
@@ -105,10 +114,10 @@ workflows:
       - build:
           requires:
             - prepare
-      - lint
+      - lint:
           requires:
             - build
-      - tu
+      - tu:
           requires:
             - build
       - deploy-github:
