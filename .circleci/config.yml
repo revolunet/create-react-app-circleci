@@ -90,7 +90,7 @@ jobs:
                   git checkout --orphan gh-pages
               fi
 
-              cp -a "../${siteSource}/." .
+              cp -a "../build/." .
 
               git add -A
               git commit --allow-empty -m "Deploy to GitHub pages [ci skip]"
@@ -195,7 +195,7 @@ workflows:
 #                   git checkout --orphan gh-pages
 #               fi
 
-#               cp -a "../${siteSource}/." .
+#               cp -a "../build/." .
 
 #               git add -A
 #               git commit --allow-empty -m "Deploy to GitHub pages [ci skip]"
