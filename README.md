@@ -8,5 +8,5 @@ Continuous integration/deployment workflows with CircleCI
 
 Environnements variables to configure on circleci :
 
- - `GH_USER` : will push on the gh-pages branch
- - `GH_EMAIL` : your github email address
+ - `GH_NAME` : committer who publish the build on gh-pages
+ - `GH_EMAIL` : committer github email address
