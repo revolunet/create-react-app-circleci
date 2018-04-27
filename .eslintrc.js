@@ -22,7 +22,9 @@ module.exports = {
   },
   plugins: ["react", "prettier", "jsx-a11y"],
   globals: {
-    React: true
+    React: true,
+    it: true,
+    expect: true
   },
   rules: {
     "prettier/prettier": "warn",

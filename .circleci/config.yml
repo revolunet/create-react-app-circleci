@@ -40,6 +40,13 @@ jobs:
       - attach_workspace:
           at: .
       - run: npm run test
+  e2e:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: npm run test
   lint:
     <<: *defaults
     steps:
@@ -111,24 +118,27 @@ workflows:
   build_accept_deploy:
     jobs:
       - prepare
-      - build:
-          requires:
-            - prepare
       - lint:
           requires:
-            - build
+            - prepare
+      - build:
+          requires:
+            - lint
       - tu:
+          requires:
+            - build
+      - e2e:
           requires:
             - build
       - deploy-github:
           requires:
             - tu
-            - lint
+            - e2e
       - deploy-prod:
           type: approval
           requires:
             - tu
-            - lint
+            - e2e
 
 
 # version: 2
