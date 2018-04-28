@@ -11,3 +11,6 @@ In Circle CI :
  - AddEnvironnements variables to configure on circleci :
    - `GH_NAME` : committer who publish the build on gh-pages
    - `GH_EMAIL` : committer github email address
+   
+ Todo :
+  - e2e sample tests
