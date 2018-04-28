@@ -6,7 +6,8 @@ Continuous integration/deployment workflows with CircleCI
 
 ![workflow](./workflow.png)
 
-Environnements variables to configure on circleci :
-
- - `GH_NAME` : committer who publish the build on gh-pages
- - `GH_EMAIL` : committer github email address
+In Circle CI :
+ - Add a checkout key with write access to the repo
+ - AddEnvironnements variables to configure on circleci :
+   - `GH_NAME` : committer who publish the build on gh-pages
+   - `GH_EMAIL` : committer github email address
